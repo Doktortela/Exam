@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exam;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,24 @@ namespace Exam
             Console.WriteLine(i);
             Console.WriteLine(s.WordAdding());
             Console.ReadLine();
+
+
+
+            List<int> someNewList = new List<int>();
+            someNewList.Add(1);
+            someNewList.Add(2);
+            someNewList.Add(3);
+
+            bool max = someNewList[2].GetMaxValue();
+            Console.WriteLine("Максимальное значение = {0}", max);
+
+
+            int q = 24;
+            int w = 89;
+            int e = q.Value(w);
+            Console.WriteLine(e);
+
+
         }
     }
 
@@ -23,7 +42,7 @@ namespace Exam
     {
         public static string WordAdding(this string str)
         {
-            return str+" . PS: made by vova";
+            return str + " . PS: made by vova";
         }
 
         public static int WordCount(this string str, char c)
@@ -35,6 +54,20 @@ namespace Exam
                     counter++;
             }
             return counter;
+        }
+    }
+
+    public static class IntExtension
+    {
+        static public bool GetMaxValue(this int list)
+        {
+            
+            return list % 11 == 0;
+        }
+         
+        static public int Value(this int q, int w)
+        {
+            return q * w;
         }
     }
 }
